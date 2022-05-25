@@ -13,7 +13,7 @@ variable "agent_count" {
 }
 
 variable "ssh_public_key" {
-  default = "/home/runner/.ssh/id_rsa.pub"
+  default = "/home/runner/.ssh/id_rsa"
 }
 
 variable "dns_prefix" {
