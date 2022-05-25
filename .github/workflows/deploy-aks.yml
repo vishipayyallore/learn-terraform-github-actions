@@ -35,7 +35,8 @@ jobs:
           # SSH private key
           key: id_rsa
           if_key_exists: replace
-
+          known_hosts: SSH config
+    
       - name: "Terraform Format"
         uses: hashicorp/terraform-github-actions@master
         with:
