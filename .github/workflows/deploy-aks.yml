@@ -37,8 +37,11 @@ jobs:
           if_key_exists: replace
           known_hosts: SSH config
 
-      - name: Print SSH Key
+      - name: List SSH Key
         run: ls -l /home/runner/.ssh
+
+      - name: Print SSH Key
+        run: cat /home/runner/.ssh/id_rsa
 
       - name: "Terraform Format"
         uses: hashicorp/terraform-github-actions@master
