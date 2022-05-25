@@ -33,10 +33,13 @@ jobs:
         uses: shimataro/ssh-key-action@v2.3.1
         with:
           # SSH private key
-          key: ${{ github.workspace }}/id_rsa
+          key: id_rsa
           if_key_exists: replace
           known_hosts: SSH config
-    
+
+      - name: Print SSH Key
+        run: ls /home/runner/.ssh
+
       - name: "Terraform Format"
         uses: hashicorp/terraform-github-actions@master
         with:
