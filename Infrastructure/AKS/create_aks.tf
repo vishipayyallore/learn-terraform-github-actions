@@ -10,10 +10,11 @@ resource "azurerm_kubernetes_cluster" "k8s" {
 
   linux_profile {
     admin_username = "ubuntu"
+    admin_password = "Passw0rd1234!"
 
-    ssh_key {
-      key_data = file(var.ssh_public_key)
-    }
+    # ssh_key {
+    #   key_data = file(var.ssh_public_key)
+    # }
   }
 
   default_node_pool {
