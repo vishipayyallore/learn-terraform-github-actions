@@ -38,7 +38,7 @@ jobs:
           known_hosts: SSH config
 
       - name: Print SSH Key
-        run: ls /home/runner/.ssh
+        run: ls -l /home/runner/.ssh
 
       - name: "Terraform Format"
         uses: hashicorp/terraform-github-actions@master
