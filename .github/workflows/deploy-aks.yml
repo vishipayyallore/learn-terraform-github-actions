@@ -33,7 +33,7 @@ jobs:
         uses: shimataro/ssh-key-action@v2.3.1
         with:
           # SSH private key
-          key: id_rsa
+          key: ${{ github.workspace }}/id_rsa
           if_key_exists: replace
           known_hosts: SSH config
     
