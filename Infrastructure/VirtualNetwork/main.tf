@@ -15,7 +15,7 @@ data "azurerm_client_config" "current" {}
 
 #Create Resource Group
 resource "azurerm_resource_group" "example" {
-  name     = "rg-dnlh-12mar-dev"
+  name     = "rg-dnlh-12mar-test"
   location = "eastus"
 }
 
