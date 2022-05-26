@@ -35,9 +35,13 @@ jobs:
         with:
           # SSH private key
           key: ${{ secrets.SSH_KEYS }}
-          name: id_rsa
+          name: id_rsa.pub
           known_hosts: dev.example.com
-          config: ssh_config
+          config: |
+            Host bastion
+            HostName xxx.xxx.xxx.xxx
+            User user-of-bastion
+            IdentityFile ~/.ssh/id_rsa.pub
           if_key_exists: replace
 
       - name: List SSH Key
