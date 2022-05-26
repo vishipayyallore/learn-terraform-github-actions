@@ -34,9 +34,11 @@ jobs:
         uses: shimataro/ssh-key-action@v2.3.1
         with:
           # SSH private key
-          key: ${{ secrets.SSH_KEY }}
+          key: ${{ secrets.SSH_KEYS }}
+          name: id_rsa
+          known_hosts: dev.example.com
+          config: ssh_config
           if_key_exists: replace
-          known_hosts: SSH config
 
       - name: List SSH Key
         run: ls -l /home/runner/.ssh
