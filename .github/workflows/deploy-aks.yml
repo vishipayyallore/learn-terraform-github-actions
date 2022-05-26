@@ -47,8 +47,11 @@ jobs:
       - name: List SSH Key
         run: ls -l /home/runner/.ssh
 
-      - name: Print SSH Key
-        run: cat /home/runner/.ssh/id_rsa
+      - name: Print SSH Key from /Home
+        run: cat /home/runner/.ssh/id_rsa.pub
+
+      - name: Print SSH Key from ~/.ssh
+        run: cat ~/.ssh/id_rsa.pub
 
       - name: "Terraform Format"
         uses: hashicorp/terraform-github-actions@master
