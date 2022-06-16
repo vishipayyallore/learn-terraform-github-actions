@@ -29,7 +29,7 @@ variable "resource_group_name" {
 }
 
 variable "location" {
-  default = "Central US"
+  default = "East US"
 }
 
 variable "log_analytics_workspace_name" {
