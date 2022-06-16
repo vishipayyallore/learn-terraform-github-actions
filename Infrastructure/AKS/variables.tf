@@ -17,15 +17,15 @@ variable "ssh_public_key" {
 }
 
 variable "dns_prefix" {
-  default = "k8stest"
+  default = "k8s-eshop"
 }
 
 variable "cluster_name" {
-  default = "k8stest"
+  default = "k8s-eshop"
 }
 
 variable "resource_group_name" {
-  default = "azure-k8stest"
+  default = "azure-k8s-eshop"
 }
 
 variable "location" {
