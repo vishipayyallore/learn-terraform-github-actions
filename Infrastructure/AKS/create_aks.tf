@@ -1,5 +1,5 @@
 data "azurerm_resource_group" "k8s" {
-  name = "rg-dnlh-12mar-test"
+  name = "rg-womd-dev-001"
 }
 
 resource "azurerm_kubernetes_cluster" "k8s" {
