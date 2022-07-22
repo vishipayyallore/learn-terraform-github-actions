@@ -35,12 +35,12 @@ resource "azurerm_kubernetes_cluster" "k8s" {
   }
 
   # Linux Profile
-  linux_profile {
-    admin_username = "ubuntu"
-    ssh_key {
-      key_data = file(var.ssh_public_key)
-    }
-  }
+  # linux_profile {
+  #   admin_username = "ubuntu"
+  #   ssh_key {
+  #     key_data = file(var.ssh_public_key)
+  #   }
+  # }
 
   tags = {
     Environment = "Development"
