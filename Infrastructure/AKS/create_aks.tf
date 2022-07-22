@@ -9,24 +9,37 @@ resource "azurerm_kubernetes_cluster" "k8s" {
   dns_prefix          = var.dns_prefix
 
   default_node_pool {
-    name       = "agentpool"
-    node_count = var.agent_count
-    vm_size    = "Standard_D2_v2"
+    name                 = "agentpool"
+    node_count           = var.agent_count
+    vm_size              = "Standard_D2_v2"
+    os_disk_size_gb      = 30
+    orchestrator_version = "1.24.1"
+    enable_auto_scaling  = true
+    max_count            = 3
+    min_count            = 1
+    type                 = "VirtualMachineScaleSets"
   }
 
   identity {
     type = "SystemAssigned"
   }
 
-  # addon_profile {
   key_vault_secrets_provider {
     secret_rotation_enabled = true
   }
-  # }
 
+  # Network Profile
   network_profile {
     load_balancer_sku = "standard"
-    network_plugin    = "kubenet"
+    network_plugin    = "azure"
+  }
+
+  # Linux Profile
+  linux_profile {
+    admin_username = "ubuntu"
+    ssh_key {
+      key_data = file(var.ssh_public_key)
+    }
   }
 
   tags = {
